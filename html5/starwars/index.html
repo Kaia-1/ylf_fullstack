@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星球大战--前端是代码界的导演</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(./images/bg.jpg);
+            background-color: #000000;
+        }
+
+        .starwars {
+            height: 17em;
+            width: 34em;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* background:red; */
+            transform: translate(-50%, -50%);
+            perspective: 800px;/*设置元素被查看位置的视图：*/
+            transform-style:preserve-3d;/*表示所有子元素在3D空间中呈现。*/
+        }
+        .star,
+        .wars {
+            position: absolute;
+        }
+        .star {
+            top: -0.75em;
+            /* 动作效果  导演 */
+            animation: star 10s ease-out infinite;
+            /*infinite无限的*/
+        }
+        .wars {
+            bottom: -0.5em;
+            animation: wars 10s ease-out infinite;
+        }
+        /*通过 @keyframes 规则，您能够创建动画。*/
+        @keyframes star {
+            0% {
+                opacity: 0;/*opacity透明度*/
+                transform: scale(1.5);/*scale放大缩小*/
+            }
+            20% {
+                opacity: 1;
+            }
+            89% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 100;
+                transform:translateZ(-400em);
+            }/*以百分比来规定改变发生的时间，或者通过关键词 "from" 和 "to"，等价于 0% 和 100%。0% 是动画的开始时间，100% 动画的结束时间。*/
+        }
+        @keyframes wars {
+            0% {
+                opacity: 0;/*opacity透明度*/
+                transform: scale(1.5);/*scale放大缩小*/
+            }
+            20% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 100;
+                transform:translateZ(-400em);
+            }/*以百分比来规定改变发生的时间，或者通过关键词 "from" 和 "to"，等价于 0% 和 100%。0% 是动画的开始时间，100% 动画的结束时间。*/
+        }
+    </style>
+</head>
+
+<body>
+    <!-- .starwars>img[src="./images/star.svg"].star+img[src="./images/wars.svg"].wars + tab
+    <div class="starwars">
+        <img src="./images/star.svg" alt="" class="star">
+        <img src="./images/wars.svg" alt="" class="wars">
+    </div> -->
+    <!-- .starwars>img.star[src="./images/star.svg"]*2 -->
+    <div class="starwars">
+        <img src="./images/star.svg" alt="" class="star">
+        <img src="./images/wars.svg" alt="" class="wars">
+    </div>
+</body>
+
+</html>
